@@ -1,0 +1,32 @@
+/*       Read an Analog Value From the Potentiometer
+ 	Activity 04 - Set the LED Brightness with the Potentiometer  */
+ 	
+const int LED = 3;
+const int POT = A0;
+int timer = 50;
+
+void setup()
+{
+  pinMode(LED, OUTPUT);
+  pinMode(POT, INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+ int brightness = 0;
+ int sensorval = analogRead(LED);
+ float voltage = sensorval * (5.0/1024.0);
+ brightness = analogRead(POT);
+if(brightness<=110){
+  digitalWrite(LED, LOW);
+ }
+ else{
+ analogWrite(LED, map(brightness, 110, 540, 0 , 255));
+  }
+ 
+ delay(timer);
+ Serial.println(brightness);
+  Serial.println(voltage);
+
+}

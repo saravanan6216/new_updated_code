@@ -1,0 +1,44 @@
+// Another new and improved formula for button presses--with simple debouncing!
+
+const int LED1= 13;
+int LED2=8;    
+const int BUTTON = 7;  
+
+int count=0;
+int val = 0;     // val will be used to store the state
+                 // of the input pin
+int old_val = 0; // this variable stores the previous
+                 // value of "val"
+int state = 0;   // 0 = LED off and 1 = LED on
+
+void setup() {
+  pinMode(LED1, OUTPUT);   // tell Arduino LED is an output
+   pinMode(LED2, OUTPUT);
+  pinMode(BUTTON, INPUT); // and BUTTON is an input
+}
+
+void loop(){
+ val = digitalRead(BUTTON); 
+                           
+
+
+ if ((val == HIGH) && (old_val == LOW)){
+   state = 1 - state;
+  
+   delay(10);
+ }
+
+ old_val = val; // val is now old, let's store it
+
+ if ((state == 1) && (count == 0)) {
+   digitalWrite(LED1, HIGH); // turn LED ON
+   digitalWrite(LED2, LOW);
+ }
+ 
+  else {
+   digitalWrite(LED1, LOW);
+    digitalWrite(LED2, HIGH);
+    
+}
+}
+

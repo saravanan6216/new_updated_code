@@ -1,0 +1,58 @@
+/* LED to Power on with the Remote Controller */
+
+#include <IRremote.h>
+
+#define IR_RECEIVE_PIN 8
+
+#define IR_BUTTON_1 12
+#define IR_BUTTON_2 24
+#define IR_BUTTON_3 94
+#define IR_BUTTON_PLAY_PAUSE 64
+const int redLedPin = 9;
+const int greenLedPin = 10;
+const int blueLedPin = 11;
+
+void setup() {
+  Serial.begin(9600);
+  IrReceiver.begin(IR_RECEIVE_PIN);
+  pinMode(redLedPin, OUTPUT);
+  pinMode(greenLedPin, OUTPUT);
+  pinMode(blueLedPin, OUTPUT);
+}
+
+void loop() {
+  if (IrReceiver.decode()) {
+    IrReceiver.resume();
+    int command = IrReceiver.decodedIRData.command;
+    switch (command) {
+      case IR_BUTTON_1: {
+        digitalWrite(redLedPin, HIGH);   
+        delay(100);  
+        digitalWrite(redLedPin, LOW);
+        Serial.println("Pressed on button 1");
+        break;
+      }
+      case IR_BUTTON_2: {
+        digitalWrite(greenLedPin, HIGH);   
+        delay(100);  
+        digitalWrite(greenLedPin, LOW);
+        Serial.println("Pressed on button 2");
+        break;
+      }
+      case IR_BUTTON_3: {
+        digitalWrite(blueLedPin, HIGH);   
+        delay(100);  
+        digitalWrite(blueLedPin, LOW);
+        Serial.println("Pressed on button 3");
+        break;
+      }
+      case IR_BUTTON_PLAY_PAUSE: {
+        Serial.println("Pressed on button play/pause");
+        break;
+      }
+      default: {
+        Serial.println("Button not recognized");
+      }
+    }
+  }
+}

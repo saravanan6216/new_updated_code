@@ -1,0 +1,18 @@
+/* Interfacing of high voltage device with Arduino
+ 	    Turn on and off bulb after some duration */
+
+
+void setup()
+{
+  
+  pinMode(2, OUTPUT);//to set pin 2 is output 
+  Serial.begin(9600);
+  
+}
+
+void loop()
+{digitalWrite(2, HIGH);// initially bulb to ON
+  delay(1000); // Wait for 1 min
+  digitalWrite(2, LOW);//after 2min bulb to turn OFF
+  delay(1000);
+}

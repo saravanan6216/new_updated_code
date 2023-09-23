@@ -1,0 +1,45 @@
+ /* arduino to arduino usart*/
+ 
+ //master
+ 
+ void setup()
+{
+  Serial.begin(9600);
+  
+}
+void loop()
+{
+  int data=76;
+  Serial.write(data);
+  delay(100);
+}
+
+//slave
+
+#include<LiquidCrystal.h>
+const int rs=12,en=11,d4=5,d5=4,d6=3,d7=2;
+LiquidCrystal lcd(rs,en,d4,d5,d6,d7);
+int data;
+void setup()
+{
+  Serial.begin(9600);
+  lcd.begin(16,2);
+  lcd.print("ok");
+  
+}
+void loop()
+{
+  lcd.cursor();
+  delay(100);
+  if(Serial.available()>0)
+  {
+    lcd.setcursor(0,5);
+  data=Serial.read()
+  lcd.print(data);
+  }
+  
+}
+
+  
+
+ 

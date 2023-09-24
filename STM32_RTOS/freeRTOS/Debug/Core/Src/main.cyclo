@@ -1,0 +1,9 @@
+main.c:80:5:main	4
+main.c:168:6:SystemClock_Config	4
+main.c:218:13:MX_I2C1_Init	4
+main.c:272:13:MX_GPIO_Init	1
+main.c:308:6:StartDefaultTask	1
+main.c:318:13:led_green_function	1
+main.c:331:13:led_orange_function	1
+main.c:344:13:led_red_function	1
+main.c:386:6:Error_Handler	1

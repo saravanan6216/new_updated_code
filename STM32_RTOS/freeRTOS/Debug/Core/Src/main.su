@@ -1,0 +1,9 @@
+../Core/Src/main.c:80:5:main	80	static,ignoring_inline_asm
+../Core/Src/main.c:168:6:SystemClock_Config	96	static
+../Core/Src/main.c:218:13:MX_I2C1_Init	8	static
+../Core/Src/main.c:272:13:MX_GPIO_Init	40	static
+../Core/Src/main.c:308:6:StartDefaultTask	16	static
+../Core/Src/main.c:318:13:led_green_function	24	static
+../Core/Src/main.c:331:13:led_orange_function	24	static
+../Core/Src/main.c:344:13:led_red_function	24	static
+../Core/Src/main.c:386:6:Error_Handler	4	static,ignoring_inline_asm

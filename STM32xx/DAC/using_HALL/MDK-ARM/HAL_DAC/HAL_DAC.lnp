@@ -1,0 +1,25 @@
+--cpu=Cortex-M4.fp.sp --branchpatch=sdcomp-29491-629360
+"hal_dac\startup_stm32l476xx.o"
+"hal_dac\main.o"
+"hal_dac\stm32l4xx_it.o"
+"hal_dac\stm32l4xx_hal_msp.o"
+"hal_dac\stm32l4xx_hal_dac.o"
+"hal_dac\stm32l4xx_hal_dac_ex.o"
+"hal_dac\stm32l4xx_hal.o"
+"hal_dac\stm32l4xx_hal_rcc.o"
+"hal_dac\stm32l4xx_hal_rcc_ex.o"
+"hal_dac\stm32l4xx_hal_flash.o"
+"hal_dac\stm32l4xx_hal_flash_ex.o"
+"hal_dac\stm32l4xx_hal_flash_ramfunc.o"
+"hal_dac\stm32l4xx_hal_gpio.o"
+"hal_dac\stm32l4xx_hal_dma.o"
+"hal_dac\stm32l4xx_hal_dma_ex.o"
+"hal_dac\stm32l4xx_hal_pwr.o"
+"hal_dac\stm32l4xx_hal_pwr_ex.o"
+"hal_dac\stm32l4xx_hal_cortex.o"
+"hal_dac\stm32l4xx_hal_exti.o"
+"hal_dac\system_stm32l4xx.o"
+--strict --scatter "HAL_DAC\HAL_DAC.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "HAL_DAC.map" -o HAL_DAC\HAL_DAC.axf

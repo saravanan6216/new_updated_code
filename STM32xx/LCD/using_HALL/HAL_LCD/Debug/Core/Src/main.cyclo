@@ -1,0 +1,9 @@
+HAL_lcd.h:22:5:init_lcd_HAL	1
+HAL_lcd.h:33:6:port	5
+HAL_lcd.h:52:6:HAL_data	1
+HAL_lcd.h:69:6:cmd	1
+HAL_lcd.h:89:6:string	2
+main.c:65:5:main	1
+main.c:110:6:SystemClock_Config	4
+main.c:160:13:MX_GPIO_Init	1
+main.c:202:6:Error_Handler	1
